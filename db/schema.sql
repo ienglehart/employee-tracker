@@ -1,0 +1,22 @@
+DROP TABLE IF EXISTS employee;
+DROP TABLE IF EXISTS candidates;
+DROP TABLE IF EXISTS voters;
+
+CREATE TABLE employee (
+  id INTEGER PRIMARY KEY,
+  first_name VARCHAR(30) NOT NULL,
+  last_name VARCHAR(30) NOT NULL,
+  role_id INTEGER FOREIGN KEY,
+  manager_id INTEGER FOREIGN KEY
+);
+
+CREATE TABLE role (
+    id INTEGER PRIMARY KEY,
+    salary DECIMAL,
+    department_id INTEGER FOREIGN KEY
+);
+
+CREATE TABLE department (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(30) NOT NULL
+)
